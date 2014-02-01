@@ -1,0 +1,20 @@
+{
+  "name": "stan-accordion",
+  "version": "0.0.0",
+  "description": "yet another vanilla JS accordion component",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/standard-analytics/accordion.git"
+  },
+  "keywords": [
+    "accordion",
+    "UI"
+  ],
+  "author": "Sebastien Ballesteros",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/standard-analytics/accordion/issues"
+  },
+  "homepage": "https://github.com/standard-analytics/accordion"
+}
