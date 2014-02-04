@@ -6,13 +6,16 @@
 }
 
 .accordion > div {
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  -webkit-transition: max-height 0.2s ease;
+  -moz-transition: max-height 0.2s ease;
+  -ms-transition: max-height 0.2s ease;
+  -o-transition: max-height 0.2s ease;
+  transition: max-height 0.2s ease;
 }
 
+.accordion-content {
+  padding: 1em;
+}
 
 div.accordion-open{
   border-left: 1px solid rgb(229, 229, 229);

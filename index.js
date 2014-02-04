@@ -35,6 +35,7 @@ function Accordion(container, headerTag){
 
 Accordion.prototype.init = function(headerElement){
   var content = headerElement.nextElementSibling;
+  content.classList.add('accordion-content');
 
   //wrap content into a div so that we know the size (for CSS3 transition)...
   var parent = content.parentNode;
@@ -48,7 +49,6 @@ Accordion.prototype.init = function(headerElement){
   wrapper.style.maxHeight = '0px';
 };
 
-
 Accordion.prototype.append = function(html){
   var liveSel = this.container.getElementsByTagName(this.headerTag);
   var offset = liveSel.length;
@@ -58,10 +58,6 @@ Accordion.prototype.append = function(html){
   }
 };
 
-
-document.addEventListener("DOMContentLoaded", function() {
-
-  var acc = new Accordion(document.getElementsByClassName('accordion')[0]);
-  acc.append('<h3>aaaa</h3><div>sfsfsfsfs</div><h3>aaaasssss</h3><div>vsfsfsfsfs</div>');
-  
-});
+if (typeof module !== 'undefined' && module.exports){
+  module.exports = Accordion;
+}
