@@ -4,6 +4,14 @@
 
     <link rel="stylesheet" href="style.css">
     <script src="index.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(e){
+        var acc = new Accordion(document.getElementsByClassName('accordion')[0]);
+        setTimeout(function(){
+          acc.append('<h3>added</h3><div>added content</div>');
+        }, 2000);
+      });      
+    </script>
 
   </head>
   <body>
