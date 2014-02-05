@@ -34,6 +34,7 @@ div.accordion-open{
 
 .accordion > h3:hover{
   border-color: rgb(139, 203, 0);
+  cursor: pointer;
 }
 
 h3.accordion-open{
