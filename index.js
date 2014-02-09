@@ -40,6 +40,7 @@ Accordion.prototype.init = function(headerElement){
   //wrap content into a div so that we know the size (for CSS3 transition)...
   var parent = content.parentNode;
   var wrapper = document.createElement('div');
+  wrapper.classList.add('accordion-entry');
 
   // set the wrapper as child (instead of the element)
   parent.replaceChild(wrapper, content);
