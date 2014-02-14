@@ -33,7 +33,7 @@ div.accordion-open{
 }
 
 .accordion > h3:hover{
-  border-color: rgb(139, 203, 0);
+  border-color: black;
   cursor: pointer;
 }
 
@@ -43,7 +43,7 @@ h3.accordion-open{
   background-color: white;
 }
 
-.accordion h3:before {
+.accordion-caret h3:before {
   display: inline-block;
   content: ' ';
   vertical-align: middle;
@@ -54,7 +54,7 @@ h3.accordion-open{
   border-left-color: black;
 }
 
-h3.accordion-open:before {
+.accordion-caret h3.accordion-open:before {
   top: 2px;
   border: 5px solid transparent;
   border-top-color: black;
