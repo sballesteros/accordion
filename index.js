@@ -1,13 +1,19 @@
-function Accordion(container, headerTag){
+var util = require("util");
+var events = require("events");
 
+function Accordion(container, opts){
+  events.EventEmitter.call(this);
+
+  opts = opts || {};
+
+  this.destroyable = opts.destroyable || false;
   this.container = container;
-  this.headerTag = headerTag || 'h3';
+  this.headerTag = opts.headerTag || 'h3';
   this.opened = undefined;
 
   Array.prototype.forEach.call(this.container.getElementsByTagName(this.headerTag), function(el){ 
     this.init(el);
   }, this);  
-
 
   this.container.addEventListener('click', function(e) {   
     if(e.target && e.target.tagName === this.headerTag.toUpperCase()) {
@@ -28,12 +34,37 @@ function Accordion(container, headerTag){
       }
 
       wrapper.classList.toggle('accordion-open');
+    } else if (e.target.classList.contains('accordion-destroy')) {
+      
+      e.preventDefault();
+
+      var id = e.target.parentNode.id
+        , accHeader = e.target.parentNode
+        , accContent = accHeader.nextElementSibling;
+
+
+      if(this.opened && this.opened === accHeader) {
+        this.opened = undefined;
+      }
+      this.container.removeChild(accHeader);
+      this.container.removeChild(accContent);
+      
+      this.emit('removed', id);
     }
   }.bind(this));
 
 };
 
+util.inherits(Accordion, events.EventEmitter);
+
+
 Accordion.prototype.init = function(headerElement){
+
+  //add close
+  if(this.destroyable){
+    headerElement.insertAdjacentHTML('beforeend', '<a class="accordion-destroy" title="destroy" href="#">&times;</a>');
+  }
+
   var content = headerElement.nextElementSibling;
   content.classList.add('accordion-content');
 
@@ -48,6 +79,8 @@ Accordion.prototype.init = function(headerElement){
   wrapper.appendChild(content);
 
   wrapper.style.maxHeight = '0px';
+
+  this.emit('added', headerElement.id);
 };
 
 Accordion.prototype.append = function(html){
@@ -59,6 +92,5 @@ Accordion.prototype.append = function(html){
   }
 };
 
-if (typeof module !== 'undefined' && module.exports){
-  module.exports = Accordion;
-}
+
+module.exports = Accordion;

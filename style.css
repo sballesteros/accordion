@@ -40,7 +40,6 @@ div.accordion-open{
 h3.accordion-open{
   border-bottom-right-radius: 0px;  
   border-bottom-left-radius: 0px;  
-  background-color: white;
 }
 
 .accordion-caret h3:before {
@@ -58,4 +57,22 @@ h3.accordion-open{
   top: 2px;
   border: 5px solid transparent;
   border-top-color: black;
+}
+
+a.accordion-destroy {
+  float:right;
+  margin-right:0.3em;
+  color: white;
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+a.accordion-destroy:visited {
+  color: white;  
+}
+
+a.accordion-destroy:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: rgb(221, 56, 60);
 }

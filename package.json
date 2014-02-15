@@ -1,8 +1,12 @@
 {
   "name": "stan-accordion",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "yet another vanilla JS accordion component",
   "main": "index.js",
+  "scripts": {
+    "build": "node_modules/.bin/browserify index.js | node_modules/.bin/uglifyjs -mc > bundle.js",
+    "debug": "node_modules/.bin/watchify -r ./index.js:accordion -o bundle.js -dv"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/standard-analytics/accordion.git"
@@ -16,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/standard-analytics/accordion/issues"
   },
-  "homepage": "https://github.com/standard-analytics/accordion"
+  "homepage": "https://github.com/standard-analytics/accordion",
+  "devDependencies": {
+    "watchify": "~0.6.1",
+    "browserify": "~3.30.0",
+    "uglify-js": "~2.4.12"
+  }
 }
