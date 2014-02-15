@@ -5,4 +5,6 @@ yet another vanilla JS accordion component
 
 # demo
 
-open index.html in a browser
+    npm run build
+    
+and open index.html in a browser
