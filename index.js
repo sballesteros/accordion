@@ -22,7 +22,7 @@ function Accordion(container, opts){
       var wrapper = e.target.nextElementSibling;
 
       if(wrapper.style.maxHeight === '0px'){
-        wrapper.style.maxHeight = wrapper.firstElementChild.getBoundingClientRect().height + 'px';
+        wrapper.style.maxHeight = wrapper.firstElementChild.getBoundingClientRect().height*2 + 'px'; //http://stackoverflow.com/questions/3508605/css-transition-height-0-to-height-auto
         if(this.opened && this.opened !== e.target) {
           this.opened.nextElementSibling.style.maxHeight = '0px';
           this.opened.nextElementSibling.classList.remove('accordion-open');
