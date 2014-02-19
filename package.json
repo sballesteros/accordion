@@ -1,6 +1,6 @@
 {
   "name": "stan-accordion",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "yet another vanilla JS accordion component",
   "main": "index.js",
   "scripts": {
